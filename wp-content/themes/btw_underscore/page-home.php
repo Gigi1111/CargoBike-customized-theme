@@ -19,6 +19,8 @@ $reason_1_title         = get_field('reason_1_title');
 $reason_1_desc          = get_field('reason_1_description');
 $reason_2_title         = get_field('reason_2_title');
 $reason_2_desc          = get_field('reason_2_description');
+$reason_3_title         = get_field('reason_3_title');
+$reason_3_desc          = get_field('reason_3_description');
 
 
 $who_feature_image      = get_field('who_feature_image');
@@ -80,7 +82,182 @@ get_header();
         </article>
     </section>
 
+    <!-- <?php
+				get_template_part( 'template-parts/hero', 'content' );
+        ?> -->
+    
+     <!-- INSTRUCTOR
+	================================================== -->
+    <section id="instructor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Hallo Abenteurer*innen, herzlich willkommen!</h2>
+                        </div>
+                        <!-- end col -->
+                        <!-- <div class="col-lg-4">
+                            <a href="https://twitter.com/bradhussey" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://facebook.com/bradhussey" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://plus.google.com/+BradHussey" class="badge social gplus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                        </div> -->
+                        <!-- end col -->
 
+                    </div>
+                    <!-- row -->
+
+                    <p class="lead">Wir von Cargobike Adventures haben es uns zum Ziel gesetzt, euch mit unseren Premium Lastenrädern und allerfeinstem Camping Equipment auf die Reise zu schicken. Wir sorgen dafür, dass rund um eure Reise alles glatt läuft, ihr tretet in die Pedale und beschert euch und euren Liebsten eine unvergessliche Zeit in der Natur.
+
+                        Ob ihr als Paar, als Klein- oder Großfamilie oder natürlich auch Solo auf Tour geht, wir unterstützen euch bei der Routenplanung und halten euch den Rücken frei.
+                        </p>
+                            
+                        <div class="">
+                            <a href="https://twitter.com/" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://facebook.com/" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://instagram.com/" class="badge social instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <hr>
+                            
+                            <h3>The Numbers <small>They Don't Lie</small></h3>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="num">
+                                        <div class="num-content">
+                                            41,000+ <span>students</span>
+                                        </div>
+                                        <!-- num-content -->
+                                    </div>
+                                    <!-- num -->
+                                </div>
+                                <!-- end col -->
+
+                                <div class="col-xs-4">
+                                    <div class="num">
+                                        <div class="num-content">
+                                            568 <span>reviews</span>
+                                        </div>
+                                        <!-- num-content -->
+                                    </div>
+                                    <!-- num -->
+                                </div>
+                                <!-- end col -->
+
+                                <div class="col-xs-4">
+                                    <div class="num">
+                                        <div class="num-content">
+                                            8 <span>courses</span>
+                                        </div>
+                                        <!-- num-content -->
+                                    </div>
+                                    <!-- num -->
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <!-- row -->
+
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </section>
+    <!-- instructor -->
+  
+
+     <!-- COURSE FEATURES
+	================================================== -->
+    <section id="course-features">
+        <div class="container">
+
+            <div class="section-header">
+                <!--if user uploaded an image -->
+                <!-- <?php if(!empty($features_section_image)): ?>
+                    <img src="<?php  echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>">
+                <?php endif; ?> -->
+                
+                <h2><?php echo $features_section_title; ?></h2>
+                <?php if(!empty($features_section_body)): ?>
+                        <p class="lead"><?php echo $features_section_body;?></p>
+                <?php endif; ?>
+            </div>
+            <!-- section-header -->
+
+            <div class="row">
+                <?php $loop = new WP_Query(array('post_type'=>'course_feature','orderby'=>'post_id','order'=>'ASC'));?>
+                <?php while($loop->have_posts()) : $loop->the_post(); ?>
+                    <div class="col-sm-2">
+                        <!-- <i class="<?php the_field('course_feature_icon');?>"></i> -->
+                        <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/<?php the_field('course_feature_icon_url');?>" alt="Design" style="width:50px; height:50px" >
+                        <h4><?php the_title(); ?></h4>
+                    </div>
+                    <!-- end col -->
+                <?php endwhile; ?>
+            </div>
+            <!-- row -->
+            
+        </div>
+        <!-- container -->
+    </section>
+    <!-- course-features -->
+
+
+
+     <!-- PROJECT FEATURES
+	================================================== -->
+    <section id="project-features">
+        <div class="container">
+
+            <h2>Was macht Cargobike Adventures so besonders?</h2>
+            <p class="lead">Gemeinsam entlasten wir Städte, Straßen und den Himmel. Wir bieten euch ein nie dagewesenes Konzept von Aktivurlaub.</p>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <!-- <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-design.png" alt="Design"> -->
+                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/specialty-berlin2.png" alt="Design" style=" padding: 15px;">
+                    <!-- <h3>Sexy &amp; Modern Design</h3> -->
+                    <p>Zentraler Pick-Up und Drop-Off im MotionLab Berlin-Treptow</p>
+                </div>
+                <!-- col -->
+                <div class="col-sm-4">
+                    <!-- <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-code.png" alt="Code"> -->
+                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/specialty-chair.png" alt="Code"> 
+                    <!-- <h3>Quality HTML5 &amp; CSS3</h3> -->
+                    <p>Ausführliche Einführung in Bike und Equipment bei Anmietung</p>
+                </div>
+                <!-- col -->
+                <div class="col-sm-4">
+                    <!-- <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-cms.png" alt="CMS"> -->
+                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/specialty-wheel.png" alt="CMS">
+                    <!-- <h3>Easy-to-use CMS</h3> -->
+                    <p>Neueste Modelle an Bikes und Zubehör, garantiert frisch gewartet und desinfiziert</p>
+                </div>
+                <!-- col -->
+                <div class="col-sm-4">
+                    <!-- <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-cms.png" alt="CMS"> -->
+                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/specialty-leaf.png" alt="CMS" style="padding: 8px;">
+                    <!-- <h3>Easy-to-use CMS</h3> -->
+                    <p>CO2 neutrales und somit emissionsfreies Reisen - so schont ihr die Umwelt</p>
+                </div>
+                <!-- col -->
+                <div class="col-sm-4">
+                    <!-- <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-cms.png" alt="CMS"> -->
+                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/specialty-cycle2.png" alt="CMS">
+                    <!-- <h3>Easy-to-use CMS</h3> -->
+                    <p>Alle unsere Partner verschreiben sich in höchstem Maße Nachhaltigkeit und Transparenz im Wirtschaftskreislauf</p>
+                </div>
+                <!-- col -->
+
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- container -->
+    </section>
+    <!-- project-features -->
+
+    
     <!-- OPT IN SECTION
 	================================================== -->
     <section id="optin">
@@ -135,6 +312,12 @@ get_header();
                     <p><?php echo $reason_2_desc; ?></p>
                 </div>
                 <!-- end col -->
+
+                <div class="col-sm-6">
+                <h3><?php echo $reason_3_title; ?></h3>
+                    <p><?php echo $reason_3_desc; ?></p>
+                </div>
+                <!-- end col -->
             </div>
             <!-- row -->
 
@@ -172,79 +355,6 @@ get_header();
     </section>
     <!-- who-benefits -->
 
-
-    <!-- COURSE FEATURES
-	================================================== -->
-    <section id="course-features">
-        <div class="container">
-
-            <div class="section-header">
-                <!--if user uploaded an image -->
-                <?php if(!empty($features_section_image)): ?>
-                    <img src="<?php  echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>">
-                <?php endif; ?>
-                
-                <h2><?php echo $features_section_title; ?></h2>
-                <?php if(!empty($features_section_body)): ?>
-                        <p class="lead"><?php echo $features_section_body;?></p>
-                <?php endif; ?>
-            </div>
-            <!-- section-header -->
-
-            <div class="row">
-                <?php $loop = new WP_Query(array('post_type'=>'course_feature','orderby'=>'post_id','order'=>'ASC'));?>
-                <?php while($loop->have_posts()) : $loop->the_post(); ?>
-                    <div class="col-sm-2">
-                        <i class="<?php the_field('course_feature_icon');?>"></i>
-                        <h4><?php the_title(); ?></h4>
-                    </div>
-                    <!-- end col -->
-                <?php endwhile; ?>
-            </div>
-            <!-- row -->
-            
-        </div>
-        <!-- container -->
-    </section>
-    <!-- course-features -->
-
-
-    <!-- PROJECT FEATURES
-	================================================== -->
-    <section id="project-features">
-        <div class="container">
-
-            <h2>Final Project Features</h2>
-            <p class="lead">Throughout this entire course, you work towards building an incredibly beautiful website. Want to see the website <strong>you</strong> are going to build? <em>You're looking at it!</em> The website you're using right now is the website you
-                will have built entirely by yourself, by the end of this course.</p>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-design.png" alt="Design">
-                    <h3>Sexy &amp; Modern Design</h3>
-                    <p>You get to work with a modern, professional quality design &amp; layout.</p>
-                </div>
-                <!-- col -->
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-code.png" alt="Code">
-                    <h3>Quality HTML5 &amp; CSS3</h3>
-                    <p>You'll learn how hand-craft a stunning website with valid, semantic and beautiful HTML5 &amp; CSS3.</p>
-                </div>
-                <!-- col -->
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-cms.png" alt="CMS">
-                    <h3>Easy-to-use CMS</h3>
-                    <p>Allow your clients to easily update their websites by converting your static websites to dynamic websites, using WordPress.</p>
-                </div>
-                <!-- col -->
-
-            </div>
-            <!-- row -->
-
-        </div>
-        <!-- container -->
-    </section>
-    <!-- project-features -->
 
 
     <!-- VIDEO FEATURETTE

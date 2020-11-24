@@ -1256,7 +1256,8 @@ i.ci {
     display: inline-block;
     height: 40px;
     width: 40px;
-    background: url('/wp-content/themes/btw_underscore/assets/img/icon-sprite.png') no-repeat;
+    /* background: url('/wp-content/themes/btw_underscore/assets/img/icon-sprite.png') no-repeat; */
+    background: url('/wp-content/themes/btw_underscore/assets/img/icon-combo.png') no-repeat;
 }
 
 .ci.ci-computer {
@@ -1514,6 +1515,10 @@ section.main-content {
 
 #project-features {
     text-align: center;
+}
+
+#project-features>img {
+    width: 80px;
 }
 
 #featurette {
@@ -2584,5 +2589,11 @@ footer li.signup-link a:hover {
     .resource {
         width: 100%;
         margin-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-sm-2 {
+        width: 20% !important;
     }
 }
