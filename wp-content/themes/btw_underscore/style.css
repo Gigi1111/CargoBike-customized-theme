@@ -1529,7 +1529,7 @@ section.main-content {
 }
 
 #instructor {
-    background: white url('/wp-content/themes/btw_underscore/assets/img/brad-elvis.png') 90% -10px no-repeat;
+    /* background: white url('/wp-content/themes/btw_underscore/assets/img/brad-elvis.png') 90% -10px no-repeat; */
 }
 
 #instructor h2 {
@@ -2290,7 +2290,7 @@ section.main-content {
 }
 
 #instructor {
-    background: white url('/wp-content/themes/btw_underscore/assets/img/brad-elvis.png') 90% -10px no-repeat;
+    /* background: white url('/wp-content/themes/btw_underscore/assets/img/brad-elvis.png') 90% -10px no-repeat; */
 }
 
 #instructor h2 {
@@ -2596,4 +2596,13 @@ footer li.signup-link a:hover {
     .col-sm-2 {
         width: 20% !important;
     }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #404040;
+}
+
+.navbar-inverse {
+    background: url(/wp-content/themes/btw_underscore/assets/img/tile.jpg) top left repeat;
+    border: none;
 }
