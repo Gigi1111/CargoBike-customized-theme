@@ -9,6 +9,39 @@
  * @package BTW
  */
 
+ /**
+ * Template Name: Footer
+ */
+$title1    = get_post_meta(11, 'section_1_title', true);
+$address    = get_post_meta(11, 'company_address', true);
+$contact       = get_post_meta(11, 'company_contact', true);
+$opening_hour        = get_post_meta(11, 'company_opening_hour', true);
+
+$title2    = get_post_meta(11, 'section_2_title', true);
+// $address    = get_post_meta(11, 'company_address', true);
+// $contact       = get_post_meta(11, 'company_contact', true);
+// $opening_hour        = get_post_meta(11, 'company_opening_hour', true);
+
+$title3    = get_post_meta(11, 'section_3_title', true);
+// $address    = get_post_meta(11, 'company_address', true);
+// $contact       = get_post_meta(11, 'company_contact', true);
+// $opening_hour        = get_post_meta(11, 'company_opening_hour', true);
+
+$title4    = get_post_meta(11, 'section_4_title', true);
+$paypal    = get_post_meta(11, 'paypal', true);
+$visa       = get_post_meta(11, 'visa', true);
+$mastercard        = get_post_meta(11, 'mastercard', true);
+
+$title5    = get_post_meta(11, 'section_5_title', true);
+$twitter    = get_post_meta(11, 'twitter', true);
+$facebook       = get_post_meta(11, 'facebook', true);
+$instagram        = get_post_meta(11, 'instagram', true);
+
+$form_text    = get_post_meta(11, 'form_lead_text', true);
+$form_btn    = get_post_meta(11, 'form_btn_text', true);
+
+$booking_text    = get_post_meta(11, 'booking_lead_text', true);
+$booking_btn    = get_post_meta(11, 'booking_btn_text', true);
 ?>
 
 <?php wp_footer(); ?>
@@ -16,12 +49,15 @@
 
     <!-- SIGN UP SECTION
 	================================================== -->
-    <section id="signup" data-type="background" data-speed="4">
+    <section id="signup">
+         <!-- data-type="background" data-speed="4"> -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <h2>Are you ready to take your coding skills to the <strong>next level</strong>?</h2>
-                    <p><a href="" class="btn btn-lg btn-block btn-success">Yes, sign me up!</a></p>
+                    <?php echo $booking_text ?>
+                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" style="">
+                    <?php echo $booking_btn ?>
+                    </button>
                 </div>
                 <!-- end col -->
             </div>
@@ -36,31 +72,90 @@
 	================================================== -->
     <footer>
         <div class="container">
-            <div class="col-sm-3">
-                <p>
-                    <!-- <a href="/"><img src="<?php bloginfo('stylesheet_directory');?>/assets/img/logo.png" alt="Bootstrap to WordPress"></a> -->
-                </p>
-            </div>
-            <!-- end col -->
-            <div class="col-sm-6">
-                <nav>
-                    <ul class="list-unstyled list-inline">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Resources</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li class="signup-link"><a href="">Sign up now</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- end col -->
-            <div class="col-sm-3">
-                <p class="pull-right">&copy; 2014 Brad Hussey</p>
+            <div class="">
+                <div class="col-sm-8">
+                    <p class="lead">
+                        <?php echo $form_text ?>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                        <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" style="">
+                        <?php echo $form_btn ?>
+                        </button>
+                </div>
             </div>
             <!-- end col -->
         </div>
         <!-- container -->
     </footer>
+
+     <!-- PROJECT FEATURES
+	================================================== -->
+    <section id="footer-features" >
+        <div class="container">
+            <div class="row">
+                <?php if(!empty($title1)): ?>
+                    <div class="col-sm-2">
+                        <h5><?php echo $title1; ?></h5>
+                            <?php echo $address; ?>
+                            <br><br>
+                            <?php echo $contact; ?>
+                            <br><br>
+                            <?php echo $opening_hour; ?>
+                    </div>
+                <?php endif; ?>
+                <!-- col -->
+                <?php if(!empty($title2)): ?>
+                    <div class="col-sm-2">
+                        <h5><?php echo $title2; ?></h5>
+                     
+                    </div>
+                <?php endif; ?>
+                <!-- col -->
+                <?php if(!empty($title3)): ?>
+                    <div class="col-sm-2">
+                        <h5><?php echo $title3; ?></h5>
+                           
+                    </div>
+                <?php endif; ?>
+                <!-- col -->
+                <?php if(!empty($title4)): ?>
+                    <div class="col-sm-2">
+                        <h5><?php echo $title4; ?></h5>
+                        <?php if(!empty($paypal)): ?>
+                            <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/payment/<?php echo $paypal; ?>" alt="paypal" style="height: 40px; margin: 3px;">
+                        <?php endif; ?>
+                        <?php if(!empty($visa)): ?>
+                            <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/payment/<?php echo $visa; ?>" alt="visa" style="height: 40px; margin: 3px;">
+                        <?php endif; ?>
+                        <?php if(!empty($mastercard)): ?>
+                            <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/payment/<?php echo $mastercard; ?>" alt="mastercard" style="height: 40px; margin: 3px;">
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+                <!-- col -->
+                <?php if(!empty($title5)): ?>
+                    <div class="col-sm-2">
+                        <h5><?php echo $title5; ?></h5>
+                        <?php if(!empty($twitter)): ?>
+                            <a href="<?php echo $twitter; ?>" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <?php endif; ?>
+                        <?php if(!empty($facebook)): ?>
+                            <a href="<?php echo $facebook; ?>" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <?php endif; ?>
+                        <?php if(!empty($instagram)): ?>
+                            <a href="<?php echo $instagram; ?>" class="badge social instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+                <!-- col -->
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </section>
+    <!-- footer-features -->
 
 
     <!-- MODAL

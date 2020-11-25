@@ -12,9 +12,9 @@ $optin_button_text    = get_post_meta(11, 'optin_button_text', true);
 //post, key, true means single false set
 
 // advanced Custom Fields
-$income_feature_image   = get_field('income_feature_image');
-$income_section_title   = get_field('income_section_title');
-$income_section_desc    = get_field('income_section_description');
+$premium_service_feature_image   = get_field('premium_service_feature_image');
+$premium_service_section_title   = get_field('premium_service_section_title');
+$premium_service_section_desc    = get_field('premium_service_section_description');
 $reason_1_title         = get_field('reason_1_title');
 $reason_1_desc          = get_field('reason_1_description');
 $reason_2_title         = get_field('reason_2_title');
@@ -32,59 +32,34 @@ $features_section_image      = get_field('features_section_image');
 $features_section_title      = get_field('features_section_title');
 $features_section_body      = get_field('features_section_body');
 
+$twitter    = get_post_meta(11, 'twitter', true);
+$facebook       = get_post_meta(11, 'facebook', true);
+$instagram        = get_post_meta(11, 'instagram', true);
+
 get_header();
 ?>
 
 
     <!-- HERO
     ================================================== -->
-    <section id="hero" data-type="background" data-speed="5">
-        <article>
+    <section id="hero" style="height: 50vw; overflow: hidden;">
             <div class="container clearfix">
-                <div class="row">
+                <!-- The video -->
+                <video autoplay muted loop id="videoPlayer" style="width:100vw;position: absolute; left: 0; top: 0;" poster="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/hero.jpg">
+                    <source src="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/cargobike_reel5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-                    <div class="col-sm-5">
-                        <img src="<?php bloginfo('stylesheet_directory');?>/assets/img/logo-badge.png" alt="Bootstrap to Wordpress" class="logo">
-                    </div>
-                    <!-- col -->
+                <?php
+				get_template_part( 'template-parts/hero', 'content' );
+                ?>
 
-                    <div class="col-sm-7 hero-text">
-                        <h1><?php bloginfo('name');?></h1>
-                        <p class="lead"><?php bloginfo('description');?></p>
-
-                        <div id="price-timeline">
-                            <div class="price active">
-                                <h4>Pre-Launch Price <small>Ends soon!</small></h4>
-                                <span><?php echo $prelaunch_price; ?></span>
-                            </div>
-                            <!-- end price -->
-                            <div class="price">
-                                <h4>Launch Price <small>Coming soon!</small></h4>
-                                <span><?php echo $launch_price; ?></span>
-                            </div>
-                            <!-- end price -->
-                            <div class="price">
-                                <h4>Final Price <small>Coming soon!</small></h4>
-                                <span><?php echo $final_price; ?></span>
-                            </div>
-                            <!-- end price -->
-                        </div>
-                        <!-- price-timeline -->
-
-                        <p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" role="button"><?php echo $button_text; ?></a></p>
-                    </div>
-                    <!-- col -->
-
-                </div>
-                <!-- row -->
+                
             </div>
             <!-- container -->
-        </article>
+     
     </section>
 
-    <!-- <?php
-				get_template_part( 'template-parts/hero', 'content' );
-        ?> -->
     
      <!-- INSTRUCTOR
 	================================================== -->
@@ -100,12 +75,6 @@ get_header();
                         <!-- style="background: white url('/wp-content/themes/btw_underscore/assets/img/image-relax.jpg') 90% -10px no-repeat;" -->
                         </div>
                         <!-- end col -->
-                        <!-- <div class="col-lg-4">
-                            <a href="https://twitter.com/bradhussey" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://facebook.com/bradhussey" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://plus.google.com/+BradHussey" class="badge social gplus" target="_blank"><i class="fa fa-google-plus"></i></a>
-                        </div> -->
-                        <!-- end col -->
 
                     </div>
                     <!-- row -->
@@ -116,9 +85,15 @@ get_header();
                         </p>
                             
                         <div class="">
-                            <a href="https://twitter.com/" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://facebook.com/" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://instagram.com/" class="badge social instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <?php if(!empty($twitter)): ?>
+                            <a href="<?php echo $twitter; ?>" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <?php endif; ?>
+                        <?php if(!empty($facebook)): ?>
+                            <a href="<?php echo $facebook; ?>" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <?php endif; ?>
+                        <?php if(!empty($instagram)): ?>
+                            <a href="<?php echo $instagram; ?>" class="badge social instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <?php endif; ?>
                         </div>
 
                 </div>
@@ -265,15 +240,15 @@ get_header();
 
             <div class="section-header">
                 <!--if user uploaded an image -->
-                <?php if(!empty($income_feature_image)): ?>
-                    <img src="<?php  echo $income_feature_image['url']; ?>" alt="<?php echo $income_feature_image['alt']; ?>">
+                <?php if(!empty($premium_service_feature_image)): ?>
+                    <img src="<?php  echo $premium_service_feature_image['url']; ?>" alt="<?php echo $premium_service_feature_image['alt']; ?>">
                 <?php endif; ?>
                 
-                <h2><?php echo $income_section_title; ?></h2>
+                <h2><?php echo $premium_service_section_title; ?></h2>
             </div>
             <!-- section-header -->
 
-            <p class="lead"><?php echo $income_section_desc; ?></p>
+            <p class="lead"><?php echo $premium_service_section_desc; ?></p>
             <div class="row">
                 <div class="col-sm-6">
                     <h3><?php echo $reason_1_title; ?></h3>

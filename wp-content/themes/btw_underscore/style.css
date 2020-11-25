@@ -1087,11 +1087,21 @@ textarea {
 
 /* COLOUR REFERENCES
 
+brand-primary: #2b3e1f
 Green:		#79b044
-Salmon:		#dd5638
+Salmon:		var(--brand-primary)
 Blue Gray:  #3e4249
 
 */
+
+:root {
+    --brand-primary: #2b3e1f;
+    --brand-green: #2b3e1f;
+    --brand-green-lighter: #5e8049;
+    --brand-green-even-lighter: #708264;
+    --brand-light-green: #7ab058;
+    --brand-white: #ffff;
+}
 
 
 /* ==== GENERAL ==== */
@@ -1148,12 +1158,12 @@ p {
 
 a:link,
 a:visited {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 a:hover {
     text-decoration: none;
-    color: #c9302c;
+    color: var(--brand-light-green);
 }
 
 blockquote {
@@ -1205,17 +1215,17 @@ a.btn {
 }
 
 .btn-danger {
-    background-color: #dd5638;
-    border-color: #d95131;
+    background-color: var(--brand-primary);
+    border-color: var(--brand-green-lighter);
 }
 
 .text-danger,
 li.text-danger a {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 a.text-danger:hover {
-    color: #e55939;
+    color: var(--brand-even-lighter);
 }
 
 .modal-content {
@@ -1367,7 +1377,6 @@ form textarea {
 /* ==== HERO ==== */
 
 #hero {
-    background: url('/wp-content/themes/btw_underscore/assets/img/hero-bg.jpg') 50% 0 repeat fixed;
     min-height: 500px;
     position: relative;
     display: table;
@@ -1405,7 +1414,7 @@ form textarea {
 }
 
 #price-timeline .price.active {
-    background: #dd5638;
+    background: var(--brand-primary);
 }
 
 #price-timeline .price span {
@@ -1479,7 +1488,7 @@ section.main-content {
 }
 
 .feature-image-default-alt {
-    background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') no-repeat;
+    background: url('/wp-content/themes/btw_underscore/assets/img/brand-image/1012.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -1545,7 +1554,7 @@ section.main-content {
     height: 140px;
     width: 140px;
     text-align: center;
-    background: #dd5638;
+    background: var(--brand-primary);
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -1578,10 +1587,20 @@ section.main-content {
 
 #signup {
     text-align: center;
-    background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') center center repeat fixed;
+    /* background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') center center repeat fixed; */
     background-size: cover;
     color: white;
-    padding: 140px 0;
+    /* padding: 140px 0; */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#signup .container {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    padding: 140px 15px;
+    margin: auto !important;
 }
 
 #signup h2 {
@@ -1589,7 +1608,7 @@ section.main-content {
 }
 
 #signup h2 strong {
-    border-bottom: solid 2px #dd5638;
+    border-bottom: solid 2px var(--brand-primary);
 }
 
 #signup .btn {
@@ -1613,11 +1632,11 @@ footer a:visited {
 }
 
 footer a:hover {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 footer li.signup-link a {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 footer li.signup-link a:hover {
@@ -1823,6 +1842,7 @@ footer li.signup-link a:hover {
         width: 48%;
         margin-right: 2%;
     }
+    /* hero */
 }
 
 
@@ -1858,7 +1878,7 @@ footer li.signup-link a:hover {
 /* COLOUR REFERENCES
 
 Green:		#79b044
-Salmon:		#dd5638
+Salmon:		var(--brand-primary)
 Blue Gray:  #3e4249
 
 */
@@ -1914,12 +1934,12 @@ p {
 
 a:link,
 a:visited {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 a:hover {
     text-decoration: none;
-    color: #c9302c;
+    color: var(--brand-light-green);
 }
 
 blockquote {
@@ -1971,17 +1991,17 @@ a.btn {
 }
 
 .btn-danger {
-    background-color: #dd5638;
-    border-color: #d95131;
+    background-color: var(--brand-primary);
+    border-color: var(--brand-green-lighter);
 }
 
 .text-danger,
 li.text-danger a {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 a.text-danger:hover {
-    color: #e55939;
+    color: var(--brand-even-lighter);
 }
 
 .modal-content {
@@ -2132,7 +2152,6 @@ form textarea {
 /* ==== HERO ==== */
 
 #hero {
-    background: url('/wp-content/themes/btw_underscore/assets/img/hero-bg.jpg') 50% 0 repeat fixed;
     min-height: 500px;
     position: relative;
     display: table;
@@ -2170,7 +2189,7 @@ form textarea {
 }
 
 #price-timeline .price.active {
-    background: #dd5638;
+    background: var(--brand-primary);
 }
 
 #price-timeline .price span {
@@ -2244,7 +2263,7 @@ section.main-content {
 }
 
 .feature-image-default-alt {
-    background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') no-repeat;
+    /* background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') no-repeat; */
     background-size: cover;
 }
 
@@ -2306,7 +2325,7 @@ section.main-content {
     height: 140px;
     width: 140px;
     text-align: center;
-    background: #dd5638;
+    background: var(--brand-primary);
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -2339,7 +2358,7 @@ section.main-content {
 
 #signup {
     text-align: center;
-    background: url('/wp-content/themes/btw_underscore/assets/img/hipster-stuff.jpg') center center repeat fixed;
+    background: url('/wp-content/themes/btw_underscore/assets/img/brand-image/1012.jpg') center center repeat fixed;
     background-size: cover;
     color: white;
     padding: 140px 0;
@@ -2350,7 +2369,7 @@ section.main-content {
 }
 
 #signup h2 strong {
-    border-bottom: solid 2px #dd5638;
+    border-bottom: solid 2px var(--brand-primary);
 }
 
 #signup .btn {
@@ -2374,11 +2393,11 @@ footer a:visited {
 }
 
 footer a:hover {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 footer li.signup-link a {
-    color: #dd5638;
+    color: var(--brand-primary);
 }
 
 footer li.signup-link a:hover {
@@ -2596,6 +2615,14 @@ footer li.signup-link a:hover {
     .col-sm-2 {
         width: 20% !important;
     }
+    .navbar-nav>li>a {
+        /* padding-top: 15px;
+        padding-bottom: 15px; */
+    }
+}
+
+footer .navbar-nav>li>a {
+    padding: 2px;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -2605,4 +2632,133 @@ footer li.signup-link a:hover {
 .navbar-inverse {
     background: url(/wp-content/themes/btw_underscore/assets/img/tile.jpg) top left repeat;
     border: none;
+}
+
+.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* footer */
+
+footer .footer-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: var(--main-lightest-green-color);
+    padding: var(--main-padding);
+}
+
+.payment {
+    width: 60px;
+    height: 30px;
+    padding: 2px 4px;
+    background: var(--main-white-color);
+    margin: 7px 0;
+    border-radius: 10px;
+}
+
+footer .payment img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40px;
+    margin: 3px;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+footer a {
+    color: var(--main-white-color);
+}
+
+footer a:hover {
+    color: var(--main-green-color);
+    text-decoration: none;
+}
+
+.social {
+    width: 30px;
+    height: 30px;
+    background-color: var(--main-green-color);
+    margin: 7px 0;
+    border-radius: 10px;
+    padding: 3px 7.5px;
+}
+
+.facebook {
+    padding-left: 9.5px;
+}
+
+.social:hover {
+    background-color: var(--main-lightest-green-color);
+}
+
+.cover-text-sm {
+    margin-top: 200px;
+    height: auto;
+}
+
+#hero #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+/* Add some content at the bottom of the video/page */
+
+#hero .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* Style the button used to pause/play the video */
+
+#hero #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#hero #myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+#hero video {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+header .navbar {
+    font-size: 20px;
 }
