@@ -1513,8 +1513,7 @@ section.main-content {
 }
 
 #course-features {
-    background: #3e4249;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -2283,12 +2282,6 @@ section.main-content {
     margin: 7px 0 0 0;
 }
 
-#course-features {
-    background: #3e4249;
-    color: white;
-    text-align: center;
-}
-
 #who-benefits {
     background: white;
 }
@@ -2614,6 +2607,7 @@ footer li.signup-link a:hover {
     .navbar-nav>li>a {
         padding-top: 10px;
         padding-bottom: 10px;
+        margin: 13px 0;
     }
 }
 
@@ -2633,8 +2627,8 @@ footer .navbar-nav>li>a {
     color: var(--brand-light-green) !important;
 }
 
-.navbar>.current-menu-item>a {
-    border-bottom: 5px solid;
+.current-menu-item>a {
+    border-bottom: 5px solid !important;
 }
 
 .navbar-inverse {
@@ -2791,4 +2785,20 @@ header .navbar {
     content: " ";
     height: 50vw;
     background: rgba(0, 0, 0, 0.2);
+}
+
+header .brand {
+    color: white;
+    position: absolute;
+    top: 0;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+header .brand img {
+    width: 40px;
+    height: 45px;
+    margin: 10px 5px;
 }

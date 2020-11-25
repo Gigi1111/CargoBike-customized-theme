@@ -8,7 +8,6 @@
  *
  * @package BTW
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -37,7 +36,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+
+/**
+ * Template Name: Header
+ */
+$brand_logo    			= get_field('header_logo');
+$brand_name       = get_field('header_brand_name');
+
+
+wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'btw' ); ?></a>
 
@@ -51,6 +59,15 @@
 
 				<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 					<div class="container">
+						<!-- logo
+						================================================== -->
+						<div class="brand" style="">
+							<?php if(!empty($brand_logo)): ?>
+								<img src="<?php  echo $brand_logo['url']; ?>" alt="<?php echo $brand_logo['alt']; ?>">
+							<?php endif; ?>
+							<?php  echo $brand_name; ?>
+						</div>
+						
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -69,15 +86,6 @@
 								'menu_class' => 'nav navbar-nav navbar-right'
 							));
 						?>
-
-						<!-- <div class="navbar-collapse collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="/">Home</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="resources.html">Resources</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div> -->
 					</div>
 				</div>
 

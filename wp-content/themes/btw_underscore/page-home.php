@@ -45,8 +45,8 @@ get_header();
     <section id="hero" style="height: 50vw; overflow: hidden;">
             <div class="container clearfix">
                 <!-- The video -->
-                <video autoplay muted loop id="videoPlayer" style="width:100vw;position: absolute; left: 0; top: -40px;" poster="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/hero.jpg">
-                    <source src="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/cargobike_reel5.mp4" type="video/mp4">
+                <video autoplay muted loop id="videoPlayer" style="width:100vw;position: absolute; left: 0; top: -40px;" poster="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/image-relax.jpg">
+                    <source src="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/cargobike_hero_reel.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="overlay" style="width: 100vw; position: absolute; left: 0; top: 0; content: ' '; height: 50vw; background: rgba(0,0,0,0.2);"></div>
