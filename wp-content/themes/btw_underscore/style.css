@@ -1179,10 +1179,6 @@ blockquote cite {
     margin: 15px 0 0 0;
 }
 
-blockquote:before {
-    display: none;
-}
-
 img {
     max-width: 100%;
 }
@@ -2801,4 +2797,25 @@ header .brand img {
     width: 40px;
     height: 45px;
     margin: 10px 5px;
+}
+
+#menu-foryou,
+#menu-legal {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+@media (max-width: 576px) {
+    blockquote.wp-block-quote.is-style-large::before {
+        font: Bold 80px/177px Noe Display;
+        margin-left: 8px;
+    }
+}
+
+.is-style-large:before {
+    content: "“";
+    color: rgb(47, 47, 47);
+    margin-left: calc(14.2857%);
+    position: absolute;
+    font: bold 124px / 145px "Noe Display";
 }

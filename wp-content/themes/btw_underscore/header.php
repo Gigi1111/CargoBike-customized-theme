@@ -80,7 +80,7 @@ wp_body_open(); ?>
 
 						<?php
 							wp_nav_menu(array(
-								'them_location' => 'primary',
+								'theme_location' => 'header',
 								'container' => 'nav',
 								'container_class' => 'navbar-collapse collapse',
 								'menu_class' => 'nav navbar-nav navbar-right'

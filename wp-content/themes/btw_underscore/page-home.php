@@ -11,6 +11,9 @@ $optin_text         = get_post_meta(11, 'optin_text', true);
 $optin_button_text    = get_post_meta(11, 'optin_button_text', true);
 //post, key, true means single false set
 
+$greetings_content  = get_field('greetings_content');
+$news_content  = get_field('news_content');
+
 // advanced Custom Fields
 $premium_service_feature_image   = get_field('premium_service_feature_image');
 $premium_service_section_title   = get_field('premium_service_section_title');
@@ -36,6 +39,7 @@ $twitter    = get_post_meta(11, 'twitter', true);
 $facebook       = get_post_meta(11, 'facebook', true);
 $instagram        = get_post_meta(11, 'instagram', true);
 
+
 get_header();
 ?>
 
@@ -58,10 +62,26 @@ get_header();
                 
             </div>
             <!-- container -->
-     
     </section>
 
-    
+      <!-- quote
+    ================================================== -->
+    <section id="instructor" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-6 left">
+                    <blockquote class="wp-block-quote is-style-large">
+                    <span class="" style="font:bold 84px / 5px 'Noe Display'">“</span>
+                        <p> <?php echo $news_content; ?></p>
+                        <cite class=""><a href="https://www.tagesspiegel.de/" onclick="javascript:window.open('https://www.tagesspiegel.de/'); return false;">Tagesspiegel</a></cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+
      <!-- INSTRUCTOR
 	================================================== -->
     <section id="instructor" >
@@ -70,21 +90,7 @@ get_header();
                 <div class="col-sm-8 col-md-6 left">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h2>Hallo Abenteurer*innen, herzlich willkommen!</h2>
-                        </div>
-                        <div class="col-lg-4">
-                        <!-- style="background: white url('/wp-content/themes/btw_underscore/assets/img/image-relax.jpg') 90% -10px no-repeat;" -->
-                        </div>
-                        <!-- end col -->
-
-                    </div>
-                    <!-- row -->
-
-                    <p class="lead">Wir von Cargobike Adventures haben es uns zum Ziel gesetzt, euch mit unseren Premium Lastenrädern und allerfeinstem Camping Equipment auf die Reise zu schicken. Wir sorgen dafür, dass rund um eure Reise alles glatt läuft, ihr tretet in die Pedale und beschert euch und euren Liebsten eine unvergessliche Zeit in der Natur.
-
-                        Ob ihr als Paar, als Klein- oder Großfamilie oder natürlich auch Solo auf Tour geht, wir unterstützen euch bei der Routenplanung und halten euch den Rücken frei.
-                        </p>
-                            
+                            <?php echo $greetings_content; ?>
                         <div class="">
                         <?php if(!empty($twitter)): ?>
                             <a href="<?php echo $twitter; ?>" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -96,7 +102,10 @@ get_header();
                             <a href="<?php echo $instagram; ?>" class="badge social instagram" target="_blank"><i class="fa fa-instagram"></i></a>
                         <?php endif; ?>
                         </div>
-
+                        
+                    </div>
+                    </div>
+                    <!-- row -->
                 </div>
                 <!-- end col -->
                 <div class="col-sm-8 col-md-6 right"  style="background: white url(/wp-content/themes/btw_underscore/assets/img/image-relax.jpg) 50% 99% no-repeat;

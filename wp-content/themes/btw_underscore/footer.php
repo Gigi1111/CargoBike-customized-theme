@@ -108,14 +108,30 @@ $booking_btn    = get_post_meta(11, 'booking_btn_text', true);
                 <?php if(!empty($title2)): ?>
                     <div class="col-sm-2">
                         <h5><?php echo $title2; ?></h5>
-                     
+                        <div class="column">
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location' => 'legal',
+                                    'container' => 'nav',
+                                    'menu_class' => 'nav navbar-nav'
+                                ));
+                            ?>
+                        </div>
                     </div>
                 <?php endif; ?>
                 <!-- col -->
                 <?php if(!empty($title3)): ?>
                     <div class="col-sm-2">
                         <h5><?php echo $title3; ?></h5>
-                           
+                        <div class="column">
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location' => 'foryou',
+                                    'container' => 'nav',
+                                    'menu_class' => 'nav navbar-nav'
+                                ));
+                            ?>
+                        </div>
                     </div>
                 <?php endif; ?>
                 <!-- col -->
