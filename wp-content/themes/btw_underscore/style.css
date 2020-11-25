@@ -1110,7 +1110,7 @@ body {
     margin-top: 50px;
     font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
-    background: url('/wp-content/themes/btw_underscore/assets/img/tile.jpg') top left repeat;
+    background: white;
 }
 
 .logged-in .navbar-fixed-top {
@@ -1229,7 +1229,7 @@ a.text-danger:hover {
 }
 
 .modal-content {
-    background: url('/wp-content/themes/btw_underscore/assets/img/tile.jpg') top left repeat;
+    background: white;
 }
 
 .badge.social {
@@ -1607,10 +1607,6 @@ section.main-content {
     font-weight: normal;
 }
 
-#signup h2 strong {
-    border-bottom: solid 2px var(--brand-primary);
-}
-
 #signup .btn {
     font-size: 24px;
 }
@@ -1890,7 +1886,7 @@ body {
     margin-top: 50px;
     font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
-    background: url('/wp-content/themes/btw_underscore/assets/img/tile.jpg') top left repeat;
+    background: white;
 }
 
 
@@ -2005,7 +2001,7 @@ a.text-danger:hover {
 }
 
 .modal-content {
-    background: url('/wp-content/themes/btw_underscore/assets/img/tile.jpg') top left repeat;
+    background: white;
 }
 
 .badge.social {
@@ -2358,7 +2354,7 @@ section.main-content {
 
 #signup {
     text-align: center;
-    background: url('/wp-content/themes/btw_underscore/assets/img/brand-image/1012.jpg') center center repeat fixed;
+    background: url('/wp-content/themes/btw_underscore/assets/img/brand-image/hero.jpg') center center repeat fixed;
     background-size: cover;
     color: white;
     padding: 140px 0;
@@ -2616,8 +2612,8 @@ footer li.signup-link a:hover {
         width: 20% !important;
     }
     .navbar-nav>li>a {
-        /* padding-top: 15px;
-        padding-bottom: 15px; */
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -2626,11 +2622,23 @@ footer .navbar-nav>li>a {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #404040;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.current-menu-item>a,
+.navbar-nav>li>a:hover {
+    color: var(--brand-light-green) !important;
+}
+
+.navbar>.current-menu-item>a {
+    border-bottom: 5px solid;
 }
 
 .navbar-inverse {
-    background: url(/wp-content/themes/btw_underscore/assets/img/tile.jpg) top left repeat;
+    background: none;
     border: none;
 }
 
@@ -2761,4 +2769,26 @@ footer a:hover {
 
 header .navbar {
     font-size: 20px;
+}
+
+@media (min-width: 1200px) {
+    .navbar>.container {
+        width: 95vw;
+    }
+}
+
+.scrolled {
+    background-color: white;
+    transition: background-color 400ms linear;
+    color: black !important;
+}
+
+#hero>.site-footer {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: " ";
+    height: 50vw;
+    background: rgba(0, 0, 0, 0.2);
 }
