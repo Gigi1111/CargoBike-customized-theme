@@ -9,7 +9,7 @@ $hero_btn   = get_field('hero_btn');
 <div class="cover-container d-flex mx-auto flex-column">
             <div class="cover-inner">
                 <div class="cover-text">
-                    <form action="/buchen" method="post">
+                    <form action="/buchung" method="post">
                         <label for="search">
                             <h1 style="margin: 20px;"><?php  echo $hero_text; ?></h1></label>
                         
