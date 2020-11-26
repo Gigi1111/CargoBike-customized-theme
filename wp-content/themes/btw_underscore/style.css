@@ -251,6 +251,12 @@ textarea {
     margin: 0;
 }
 
+button {
+    border-radius: 25px !important;
+    background: var(--brand-button) !important;
+    color: white;
+}
+
 
 /**
  * Show the overflow in IE.
@@ -1100,6 +1106,7 @@ Blue Gray:  #3e4249
     --brand-green-lighter: #5e8049;
     --brand-green-even-lighter: #708264;
     --brand-light-green: #7ab058;
+    --brand-button: #79b044;
     --brand-white: #ffff;
 }
 
@@ -2818,4 +2825,10 @@ header .brand img {
     margin-left: calc(14.2857%);
     position: absolute;
     font: bold 124px / 145px "Noe Display";
+}
+
+.cover-inner {
+    width: 800px;
+    margin: 18% auto;
+    text-align: center;
 }

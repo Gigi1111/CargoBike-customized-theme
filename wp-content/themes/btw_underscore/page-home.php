@@ -39,6 +39,8 @@ $twitter    = get_post_meta(11, 'twitter', true);
 $facebook       = get_post_meta(11, 'facebook', true);
 $instagram        = get_post_meta(11, 'instagram', true);
 
+$brand_logo    			= get_field('header_logo');
+$brand_name       = get_field('header_brand_name');
 
 get_header();
 ?>
@@ -53,11 +55,11 @@ get_header();
                     <source src="<?php bloginfo('stylesheet_directory');?>/assets/img/brand-image/cargobike_hero_reel.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="overlay" style="width: 100vw; position: absolute; left: 0; top: 0; content: ' '; height: 50vw; background: rgba(0,0,0,0.2);"></div>
-
-                <?php
-				get_template_part( 'template-parts/hero', 'content' );
-                ?>
+                <div class="overlay" style="width: 100vw; position: absolute; left: 0; top: 0; content: ' '; height: 50vw; background: rgba(0,0,0,0.2);">
+                     <?php
+                        get_template_part( 'template-parts/hero', 'content' );
+                        ?>
+                </div>
 
                 
             </div>
